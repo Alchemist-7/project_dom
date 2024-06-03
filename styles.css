@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Radio Canada Big', sans-serif;
+}
+ul,
+ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+:root {
+  --rtc-color-1: #fffffff1;
+  --rtc-color-2: #292e3d;
+  --rtc-color-3: #f9995d;
+  --rtc-color-4: #140897;
+
+  --rtc-bgcolor: var(--rtc-color-1);
+  --rtc-highlight: #e2e0d9b5;
+  --rtc-bordercolor: #140897;
+  --rtc-text: var(--rtc-color-2);
+
+  --rtc-border-radius: 8px;
+
+  --rtc-padding-xs: 5px;
+  --rtc-padding-s: 10px;
+  --rtc-padding-m: 20px;
+  --rtc-padding-l: 30px;
+  --rtc-padding-xl: 40px;
+
+  --rtc-margin-xs: 5px;
+  --rtc-margin-s: 10px;
+  --rtc-margin-m: 20px;
+  --rtc-margin-l: 30px;
+  --rtc-margin-xl: 40px;
+
+  --rtc-gap-xs: 5px;
+  --rtc-gap-s: 10px;
+  --rtc-gap-m: 20px;
+  --rtc-gap-l: 30px;
+  --rtc-gap-xl: 40px;
+
+  --rtc-primary-border-radius: 4px;
+  --rtc-secondary-border-radius: 2px;
+
+  --rtc-primary-font: 'Radio Canada Big', sans-serif;
+}
+body {
+  background-color: var(--rtc-bgcolor);
+  min-height: 100svh;
+  font-family: var(--rtc-primary-font);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#header-container {
+  width: 100%;
+  background-color: var(--rtc-color-2);
+  color: var(--rtc-color-1);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--rtc-padding-s) var(--rtc-padding-m);
+  background-color: #292e3d;
+}
+h1 {
+  margin-right: 30%;
+  font-family: var(--rtc-primary-font);
+  color: var(--rtc-color-1);
+}
+header > img {
+  border-radius: var(--rtc-border-radius);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 var(--rtc-margin-s);
+}
+
+nav ul li a {
+  color: var(--rtc-color-1);
+  text-decoration: none;
+}
+
+#main-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 1200px;
+  padding: var(--rtc-padding-m);
+}
+
+#filters {
+  flex: 1;
+  margin-right: var(--rtc-margin-m);
+}
+
+#products-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--rtc-gap-m);
+}
+
+.product {
+  flex: 0 0 30%;
+  box-sizing: border-box;
+}
+
+.product img {
+  max-width: 100%;
+  height: auto;
+}
+
+.product h2 {
+  font-size: 1.2em;
+  margin: var(--rtc-margin-s) 0;
+}
+
+.product p {
+  margin: var(--rtc-margin-xs) 0;
+}
+
+.product:hover {
+  transform: scale(1.05);
+}
+
+#no-products-message {
+  display: none;
+  color: var(--rtc-color-3);
+  font-size: 1.5em;
+  text-align: center;
+  margin-top: var(--rtc-margin-m);
+  flex-basis: 100%;
+}
+
+#suggested-products {
+  margin-top: var(--rtc-margin-m);
+}
+
+#filters {
+  display: flex;
+  flex-direction: column;
+}
+
+#filters input,
+#filters select,
+#filters button {
+  margin: 10px 0;
+  padding: var(--rtc-padding-s);
+  font-size: 1em;
+  border-radius: var(--rtc-border-radius);
+}
+
+@media (max-width: 768px) {
+  #main-container {
+    flex-direction: column;
+  }
+  .product {
+    flex: 0 0 48%;
+  }
+
+  #filters {
+    margin-right: 0;
+    margin-bottom: var(--rtc-margin-m);
+  }
+}
+@media (max-width: 480px) {
+  .product {
+    flex: 0 0 100%;
+  }
+}
+
+#products-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+#commitments {
+  width: 100%;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 2px solid #ccc;
+  text-align: center;
+}
+
+#commitments h2 {
+  margin-bottom: 20px;
+}
+
+#commitment-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+#commitment-images img {
+  flex: 1 0 15%;
+  max-width: 80%;
+  height: auto;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  #commitment-images img {
+    flex: 1 0 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  #commitment-images img {
+    flex: 1 0 90%;
+  }
+}
+
+.footer {
+  padding: var(--rtc-padding-m);
+  background-color: var(--rtc-color-2);
+  color: var(--rtc-color-1);
+  text-align: center;
+  width: 100%;
+  bottom: 0;
+}
+
+.footer-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: var(--rtc-gap-m);
+}
+
+.footer-list li {
+  display: inline;
+}
+
+.footer-list a {
+  color: var(--rtc-color-3);
+  text-decoration: none;
+}
+
+.footer-list a:hover {
+  text-decoration: underline;
+}
